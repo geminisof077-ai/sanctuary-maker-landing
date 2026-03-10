@@ -284,7 +284,7 @@ export default function Home() {
             {/* Author Image */}
             <div className="order-2 md:order-1">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/author-portrait-9q4aFgRKTQAATwwG2SihNH.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/author-portrait-final-KmQxYzT9pN2vLqWsRxJkPm.webp"
                 alt="Sarah Mitchell, Modern Homesteading Expert"
                 className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
               />
