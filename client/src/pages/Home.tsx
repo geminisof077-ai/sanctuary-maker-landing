@@ -57,7 +57,7 @@ export default function Home() {
       location: "Austin, TX",
       quote:
         "I've cut my grocery bill by around $60 a month just growing herbs on my apartment balcony. I can't believe I didn't start earlier. This guide made it so simple.",
-      image: "👩‍🌾",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/testimonial-megan-l_6134f63c.png",
       savings: "$60/month",
     },
     {
@@ -65,7 +65,7 @@ export default function Home() {
       location: "Portland, OR",
       quote:
         "Zero experience, but this made everything feel easy and doable. I'm now growing 80% of my salad greens indoors. So grateful for this guide.",
-      image: "👨‍🌾",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/testimonial-james-r_3bc5546a.png",
       savings: "$180/month",
     },
     {
@@ -73,7 +73,7 @@ export default function Home() {
       location: "Brooklyn, NY",
       quote:
         "I started growing herbs and greens indoors in my tiny studio. I feel healthier, more in control of my home, and I'm saving money every single week.",
-      image: "👩‍💼",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/testimonial-ashley-p_02ae975e.png",
       savings: "$120/month",
     },
     {
@@ -81,7 +81,7 @@ export default function Home() {
       location: "Denver, CO",
       quote:
         "This guide helped me understand energy independence. I've already reduced my utility bills by $80/month with the tips included. Best $12 I've ever spent.",
-      image: "👨‍💻",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/testimonial-david-m_22308ecf.png",
       savings: "$80/month",
     },
   ];
@@ -428,7 +428,7 @@ export default function Home() {
                 </div>
                 <p className="text-foreground mb-6 italic leading-relaxed">"{testimonial.quote}"</p>
                 <div className="flex items-center gap-3 pt-4 border-t border-border">
-                  <span className="text-3xl">{testimonial.image}</span>
+                  <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full object-cover" />
                   <div>
                     <p className="font-bold text-foreground">— {testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.location}</p>
