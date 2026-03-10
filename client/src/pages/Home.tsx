@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
-import { ChevronDown, Leaf, TrendingDown, Award, CheckCircle2, Star, Zap, Gift } from "lucide-react";
+import { ChevronDown, Leaf, TrendingDown, Award, CheckCircle2, Star, Zap, Shield } from "lucide-react";
 import { useState } from "react";
 import VideoPlayer from "@/components/VideoPlayer";
 import CountdownTimer from "@/components/CountdownTimer";
 
 /**
- * Design Philosophy: Modern Homesteading Landing Page v2.0 (2026)
+ * Design Philosophy: Modern Homesteading Landing Page v3.0 (2026)
  * - Sage Green + Warm Orange palette for trust and energy
  * - Playfair Display serif for titles (authority), Inter for body (readability)
  * - High-conversion psychology: urgency, social proof, scarcity, authority
- * - Subliminal messaging about order bumps and upsells
+ * - Clean, focused on core value proposition
  * - Video-first approach with countdown timer
  * - Real testimonials with specific results and locations
  */
+
+const HOTMART_LINK = "https://hotmart.com/sanctuary-maker"; // Replace with actual Hotmart link
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -25,22 +27,22 @@ export default function Home() {
     {
       question: "Do I need a big yard?",
       answer:
-        "No! This guide is specifically designed for urban and suburban living. You'll learn indoor gardening techniques, balcony setups, and container gardening that work in apartments, small homes, and limited spaces. Many of our readers have transformed tiny balconies into thriving mini-gardens. Plus, you'll discover how to make your own natural cleaning products and grow herbs year-round indoors.",
+        "No! This guide is specifically designed for urban and suburban living. You'll learn indoor gardening techniques, balcony setups, and container gardening that work in apartments, small homes, and limited spaces. Many of our readers have transformed tiny balconies into thriving mini-gardens.",
     },
     {
       question: "How much can I realistically save?",
       answer:
-        "Most readers report saving $150-$300 per month on groceries alone, depending on their climate and what they grow. When you factor in reduced utility costs and eliminated food waste, the savings often exceed $300/month. At $12, this guide pays for itself in just 2-3 weeks. Many customers also upgrade to our Homesteader's Action Toolkit to accelerate their savings even further.",
+        "Most readers report saving $150-$300 per month on groceries alone, depending on their climate and what they grow. When you factor in reduced utility costs and eliminated food waste, the savings often exceed $300/month. At $12, this guide pays for itself in just 2-3 weeks.",
     },
     {
       question: "Is it beginner-friendly?",
       answer:
-        "Absolutely. This guide assumes zero prior experience. Every step is broken down with detailed instructions, photos, and checklists. You'll start with the easiest projects first and build confidence as you progress. Most beginners see their first harvest within 3-4 weeks. The guide also includes quick-start kits for indoor gardening without soil, so you can start today.",
+        "Absolutely. This guide assumes zero prior experience. Every step is broken down with detailed instructions, photos, and checklists. You'll start with the easiest projects first and build confidence as you progress. Most beginners see their first harvest within 3-4 weeks.",
     },
     {
       question: "What format do I receive?",
       answer:
-        "You'll receive a comprehensive PDF guide (104 pages) with step-by-step instructions, plant diagrams, seasonal planting charts, and printable templates. Instant digital access means you can start reading and implementing today—no shipping, no waiting. You'll also get access to bonus resources on self-reliance and sustainable living.",
+        "You'll receive a comprehensive PDF guide (104 pages) with step-by-step instructions, plant diagrams, seasonal planting charts, and printable templates. Instant digital access means you can start reading and implementing today—no shipping, no waiting.",
     },
     {
       question: "When will I see results?",
@@ -84,6 +86,23 @@ export default function Home() {
     },
   ];
 
+  const TrustBar = () => (
+    <div className="flex flex-wrap justify-center gap-4 mt-4 pt-4 border-t border-border/30 text-xs text-muted-foreground">
+      <div className="flex items-center gap-1">
+        <Shield className="w-4 h-4 text-primary" />
+        <span>Secure Payment</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <CheckCircle2 className="w-4 h-4 text-primary" />
+        <span>7-Day Guarantee</span>
+      </div>
+      <div className="flex items-center gap-1">
+        <Star className="w-4 h-4 text-accent" />
+        <span>5,000+ Happy Readers</span>
+      </div>
+    </div>
+  );
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -94,6 +113,7 @@ export default function Home() {
             <span className="text-lg font-bold text-foreground">Sanctuary Maker</span>
           </div>
           <Button
+            onClick={() => window.location.href = HOTMART_LINK}
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
             size="lg"
           >
@@ -131,19 +151,15 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
+                onClick={() => window.location.href = HOTMART_LINK}
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6"
               >
                 🔥 Get Instant Access for $12
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-primary text-primary hover:bg-primary/5 font-bold text-lg"
-              >
-                Watch Video First
-              </Button>
             </div>
+
+            <TrustBar />
 
             {/* Social Proof */}
             <div className="flex flex-wrap gap-6 pt-4 border-t border-border">
@@ -181,6 +197,34 @@ export default function Home() {
       <section className="py-12 bg-muted/20">
         <div className="container max-w-2xl">
           <CountdownTimer />
+        </div>
+      </section>
+
+      {/* Imagine 90 Days From Now Section */}
+      <section className="py-16 md:py-24 bg-primary/5">
+        <div className="container">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-foreground">Imagine 90 Days From Now</h2>
+              <p className="text-lg text-muted-foreground">
+                Picture yourself with fresh herbs and vegetables at your fingertips, grocery bills cut in half, and the confidence that comes from knowing exactly where your food comes from.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: "🌱", title: "Week 1-2", desc: "First herbs sprouting, you're already planning your garden" },
+                { icon: "🥬", title: "Week 3-6", desc: "First harvest! Fresh salad greens on your table, savings visible" },
+                { icon: "💰", title: "Day 90", desc: "Hundreds in savings, thriving garden, complete confidence" },
+              ].map((item, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-lg border border-border text-center">
+                  <div className="text-5xl mb-3">{item.icon}</div>
+                  <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -238,13 +282,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What You Get Section */}
+      {/* What You'll Learn Section */}
       <section className="py-16 md:py-24 bg-primary/5">
         <div className="container space-y-12">
           <div className="text-center space-y-4">
-            <h2 className="text-foreground">What's Inside the Guide</h2>
+            <h2 className="text-foreground">What You'll Learn</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              If sold separately, each section would cost $10–$25. You get everything together for just $12.
+              Practical, actionable strategies you can implement immediately in your home
             </p>
           </div>
 
@@ -277,8 +321,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet the Expert Section */}
+      {/* Who This Is For Section */}
       <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-foreground">Who This Is For</h2>
+              <p className="text-lg text-muted-foreground">
+                This guide is perfect for you if you're:
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {[
+                "Living in an apartment or small home with limited space",
+                "Tired of paying $400-500/month for groceries",
+                "Concerned about food quality and where it comes from",
+                "Ready to take control of your finances and health",
+                "New to gardening and need step-by-step guidance",
+                "Looking for practical, proven strategies that actually work",
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                  <p className="text-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Expert Section */}
+      <section className="py-16 md:py-24 bg-muted/20">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Author Image */}
@@ -295,7 +369,7 @@ export default function Home() {
               <div className="space-y-4">
                 <h2 className="text-foreground">Meet Your Guide Creator</h2>
                 <p className="text-lg text-muted-foreground">
-                  Hi, I'm Emily Carter. For the past 8 years, I've been helping thousands of people transform their homes into self-reliant sanctuaries..
+                  Hi, I'm Emily Carter. For the past 8 years, I've been helping thousands of people transform their homes into self-reliant sanctuaries.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   What started as a small apartment balcony garden has become a mission to prove that anyone—regardless of space or experience—can grow their own food and take control of their finances.
@@ -366,44 +440,53 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bonus Section - Subliminal Order Bumps */}
-      <section className="py-16 md:py-24 bg-accent/5">
-        <div className="container space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-foreground">Unlock Even More Value</h2>
-            <p className="text-lg text-muted-foreground">
-              After your purchase, you'll discover exclusive add-ons that complement your guide
-            </p>
-          </div>
+      {/* What Happens After Purchase Section */}
+      <section className="py-16 md:py-24 bg-primary/5">
+        <div className="container">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-foreground">What Happens After Purchase</h2>
+              <p className="text-lg text-muted-foreground">
+                Here's exactly what you'll get and how to get started
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: "🧼",
-                title: "DIY Natural Cleaning Recipes",
-                desc: "Make your own cleaning products for pennies",
-                hint: "Available at checkout",
-              },
-              {
-                icon: "🌿",
-                title: "Indoor Gardening Quick-Start Kit",
-                desc: "Grow without soil—even in apartments",
-                hint: "Perfect complement to the guide",
-              },
-              {
-                icon: "🛠️",
-                title: "Homesteader's Action Toolkit",
-                desc: "Advanced strategies for total self-reliance",
-                hint: "Level up after your first harvest",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-lg border border-border text-center hover:shadow-md transition-shadow">
-                <div className="text-5xl mb-3">{item.icon}</div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-muted-foreground text-sm mb-3">{item.desc}</p>
-                <p className="text-xs text-accent font-semibold">{item.hint}</p>
-              </div>
-            ))}
+            <div className="space-y-6">
+              {[
+                {
+                  step: "1",
+                  title: "Instant Access",
+                  desc: "Immediately after purchase, you'll receive a download link to the complete 104-page PDF guide",
+                },
+                {
+                  step: "2",
+                  title: "Start Reading",
+                  desc: "Begin with Chapter 1 and follow the step-by-step instructions. Most people start their first project within hours",
+                },
+                {
+                  step: "3",
+                  title: "See Results",
+                  desc: "Within 2-4 weeks, you'll have your first harvest and start seeing savings on your grocery bills",
+                },
+                {
+                  step: "4",
+                  title: "Build Your System",
+                  desc: "Follow the seasonal planting charts and templates to create a year-round homesteading system",
+                },
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-primary text-white font-bold">
+                      {item.step}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -478,11 +561,27 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
+              onClick={() => window.location.href = HOTMART_LINK}
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6"
             >
               🔥 Get Instant Access for $12
             </Button>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-white/80">
+            <div className="flex items-center gap-1">
+              <Shield className="w-4 h-4" />
+              <span>Secure Payment</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <CheckCircle2 className="w-4 h-4" />
+              <span>7-Day Guarantee</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Star className="w-4 h-4" />
+              <span>5,000+ Happy Readers</span>
+            </div>
           </div>
 
           <p className="text-white/80 text-sm">
@@ -507,12 +606,33 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-8">
-        <div className="container text-center">
-          <p className="text-white/80">© 2026 Sanctuary Maker. All rights reserved.</p>
-          <p className="text-white/60 text-sm mt-2">
-            Helping people build self-reliant, healthier, more affordable homes.
-          </p>
+      <footer className="bg-foreground text-white py-12">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <p className="font-bold mb-2">Sanctuary Maker</p>
+              <p className="text-white/60 text-sm">
+                Helping people build self-reliant, healthier, more affordable homes.
+              </p>
+            </div>
+            <div>
+              <p className="font-bold mb-4">Quick Links</p>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li><a href="#" className="hover:text-white transition-colors">About Emily</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-bold mb-4">Legal</p>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
+            <p>© 2026 Sanctuary Maker. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>
