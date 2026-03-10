@@ -12,7 +12,7 @@ import TermsOfService from "./pages/TermsOfService";
 function Router() {
   return (
     <Switch>
-      <Route path={"/{"} component={Home} />
+      <Route path={"/"} component={Home} />
       <Route path={"/privacy-policy"} component={PrivacyPolicy} />
       <Route path={"/terms-of-service"} component={TermsOfService} />
       <Route path={"/404"} component={NotFound} />
