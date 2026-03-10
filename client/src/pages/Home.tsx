@@ -284,18 +284,18 @@ export default function Home() {
             {/* Author Image */}
             <div className="order-2 md:order-1">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/author-portrait-final-KmQxYzT9pN2vLqWsRxJkPm.webp"
-                alt="Sarah Mitchell, Modern Homesteading Expert"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/emily-carter-portrait.webp"
+                alt="Emily Carter, Modern Homesteading Expert"
                 className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
               />
             </div>
 
             {/* Author Bio */}
             <div className="order-1 md:order-2 space-y-6">
-              <div>
-                <h2 className="text-foreground mb-4">Meet Your Guide Creator</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-4">
-                  Hi, I'm Sarah Mitchell. For the past 8 years, I've been helping thousands of people transform their homes into self-reliant sanctuaries.
+              <div className="space-y-4">
+                <h2 className="text-foreground">Meet Your Guide Creator</h2>
+                <p className="text-lg text-muted-foreground">
+                  Hi, I'm Emily Carter. For the past 8 years, I've been helping thousands of people transform their homes into self-reliant sanctuaries..
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   What started as a small apartment balcony garden has become a mission to prove that anyone—regardless of space or experience—can grow their own food and take control of their finances.
