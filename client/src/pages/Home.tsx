@@ -284,7 +284,7 @@ export default function Home() {
             {/* Author Image */}
             <div className="order-2 md:order-1">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/emily-carter-portrait.webp"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663394128490/9RhZBNhytxSC8CviC8Nik4/emily-carter-portrait_7b134777.png"
                 alt="Emily Carter, Modern Homesteading Expert"
                 className="w-full max-w-sm mx-auto rounded-2xl shadow-xl"
               />
