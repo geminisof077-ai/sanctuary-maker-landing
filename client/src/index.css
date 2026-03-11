@@ -55,9 +55,9 @@
   --chart-5: oklch(0.55 0.09 155);
   --radius: 0.65rem;
   --background: oklch(0.99 0 0); /* Pure white */
-  --foreground: oklch(0.2 0.01 65); /* Dark charcoal */
+  --foreground: oklch(0.15 0.01 65); /* Very dark charcoal for better contrast */
   --card: oklch(0.98 0.001 0); /* Soft white */
-  --card-foreground: oklch(0.2 0.01 65);
+  --card-foreground: oklch(0.15 0.01 65);
   --popover: oklch(0.98 0.001 0);
   --popover-foreground: oklch(0.2 0.01 65);
   --secondary: oklch(0.65 0.18 45); /* Warm Orange */
